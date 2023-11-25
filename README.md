@@ -1,6 +1,6 @@
 # BCE-MSE--loss
 
-## Aufgabe Programmierübung:
+## Aufgabe:
 ##### (1) Implementieren Sie den Mean-squared-Error-Loss (MSE).
 
 ##### (2) Implementieren Sie den Binary-Cross-Entropy-Loss (BCE).
