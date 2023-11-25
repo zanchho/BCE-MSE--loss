@@ -25,19 +25,6 @@ const generateTrainingData = (MSE, BCE, size) => {
   for (let i = 0; i <= 6000; i++) {
     const testmse = generateTestDataMSE(size)
     const testBCE = generateTestDataBCE(size)
-    if (
-      isNaN(testmse.yTrue) ||
-      isNaN(testmse.yPred) ||
-      isNaN(testBCE.trueLabels) ||
-      isNaN(testBCE.predictedProbabilities)
-    )
-      console.log(
-        "noData %s %s %s %s",
-        testmse.yTrue,
-        testmse.yPred,
-        testBCE.trueLabels,
-        testBCE.predictedProbabilities
-      )
     const resultMSE = MSE(testmse.yTrue, testmse.yPred)
     const resultBCE = BCE(testBCE.trueLabels, testBCE.predictedProbabilities)
 
@@ -45,20 +32,21 @@ const generateTrainingData = (MSE, BCE, size) => {
       console.log("isNaN!!!", resultMSE, resultBCE)
       continue
     }
-    let obj = {
+    let objmse = {
       input: [...testmse.yTrue, ...testmse.yPred],
       output: [resultMSE],
     }
-    let obj2 = {
+    let objbce = {
       input: [...testBCE.trueLabels, ...testBCE.predictedProbabilities],
       output: [resultBCE],
     }
-    arrMSE.push(obj)
-    arrBCE.push(obj2)
+    arrMSE.push(objmse)
+    arrBCE.push(objbce)
   }
 
   fs.writeFileSync("./trainingDataMSE.json", JSON.stringify(arrMSE))
   fs.writeFileSync("./trainingDataBCE.json", JSON.stringify(arrBCE))
+  return { mse: arrMSE, bce: arrBCE }
 }
 
 const getTrainingDataMSE = () => {

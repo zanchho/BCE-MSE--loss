@@ -42,7 +42,6 @@ const bce = (y, p) => {
       x2 = Math.log(Math.max(epsilon, p[i])),
       x3 = 1 - y[i],
       x4 = Math.log(Math.max(epsilon, 1 - p[i]))
-    //console.log(x1, "*", x2, "-", x3, "*", x4, "=", x1 * x2 - x3 * x4)
 
     result += x1 * x2 - x3 * x4
   }
@@ -70,8 +69,7 @@ console.log("training AI finished")
 //execute
 const resultMSE = netMSE.run([...yTrue, ...yPred])
 const resultBCE = netBCE.run([...yTrue, ...yPred])
-console.log(resultMSE)
-console.log(resultBCE)
+
 console.log(`Method:\tMean Squared Error (MSE): ${mse(yTrue, yPred)}`)
 console.log(`AI:\tMean Squared Error (MSE): ${resultMSE}`)
 console.log(
