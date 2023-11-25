@@ -1,0 +1,22 @@
+{
+  "name": "loss-python-programming",
+  "version": "1.0.0",
+  "description": "Schreibe eine JavaScript-Funktion, die zwei Arrays von Zahlen als Argumente akzeptiert: yTrue für die echten Werte (Ground Truth) und yPred für die vorhergesagten Werte. (Durchschnitt Berechnen und MSE berechnen)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "MSE",
+    "JavaScript",
+    "Js",
+    "NodeJs"
+  ],
+  "author": "zanchho",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "brain.js": "^2.0.0-beta.23"
+  }
+}
