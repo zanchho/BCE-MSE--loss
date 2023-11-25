@@ -1,15 +1,27 @@
 # BCE-MSE--loss
 
 ## Aufgabe Programmierübung:
-(1) Implementieren Sie den Mean-squared-Error-Loss (MSE).
-#
-(2) Implementieren Sie den Binary-Cross-Entropy-Loss (BCE).
-#
-(3) Erzeugen Sie Trainingsdaten
+##### (1) Implementieren Sie den Mean-squared-Error-Loss (MSE).
+
+##### (2) Implementieren Sie den Binary-Cross-Entropy-Loss (BCE).
+
+##### (3) Erzeugen Sie Trainingsdaten
+
+## Setup
+
+### Im Terminal:
+##### Installation der Abhängigkeiten:
+```
+npm install
+```
+##### Starten des Projektes:
+```
+npm start
+```
 
 ## Implementation:
 
-(1) Implementieren Sie den Mean-squared-Error-Loss (MSE).
+##### (1) Implementieren Sie den Mean-squared-Error-Loss (MSE).
 ```JavaScript
 const mse = (Yt, Yp) => {
   if (!Yt.length || !Yp.length || Yt.length !== Yp.length) {
@@ -23,8 +35,8 @@ const mse = (Yt, Yp) => {
   return result / Yt.length
 }
 ```
-#
-(2) Implementieren Sie den Binary-Cross-Entropy-Loss (BCE).
+
+##### (2) Implementieren Sie den Binary-Cross-Entropy-Loss (BCE).
 ```JavaScript
 const bce = (y, p) => {
   if (!y.length || !p.length || y.length !== p.length) {
@@ -45,8 +57,8 @@ const bce = (y, p) => {
   return result / n
 }
 ```
-#
-(3) Erzeugen Sie Trainingsdaten
+
+##### (3) Erzeugen Sie Trainingsdaten
 
 ```JavaScript
 //generate for AI
@@ -118,4 +130,15 @@ const getTrainingDataBCE = () => {
   }
   return null
 }
+```
+
+## Beispiel-Ausgabe:
+
+```
+training AI
+training AI finished
+Method: Mean Squared Error (MSE): 0.05650838056208461
+AI:     Mean Squared Error (MSE): 0.17434214055538177
+Method: Binary-Cross-Entropy (BCE): 0.6483441054978616
+AI:     Binary-Cross-Entropy (BCE): 0.9996824860572815
 ```
